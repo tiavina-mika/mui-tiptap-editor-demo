@@ -1,1 +1,0 @@
-export const LAYOUT_CONTENT_PADDING_X = 24;

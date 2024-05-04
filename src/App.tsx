@@ -1,17 +1,20 @@
-import { ThemeProvider as EmotionThemeProvider } from "@emotion/react";
-import { StyledEngineProvider, ThemeProvider } from "@mui/material";
-import { theme } from "./utils/theme";
-import { GlobalStyles } from "./GlobalStyle";
-import Home from "./containers/Home";
+import {
+  StyledEngineProvider,
+  ThemeProvider,
+  createTheme
+} from "@mui/material";
+
+const theme = createTheme({
+  palette: {
+    mode: "light"
+  }
+});
 
 const App = () => {
   return (
     <StyledEngineProvider injectFirst>
       <ThemeProvider theme={theme}>
-        <EmotionThemeProvider theme={theme}>
-          <GlobalStyles theme={theme} />
-          <Home />
-        </EmotionThemeProvider>
+        <h1>Cool</h1>
       </ThemeProvider>
     </StyledEngineProvider>
   );
