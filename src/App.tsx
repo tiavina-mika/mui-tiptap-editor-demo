@@ -68,9 +68,19 @@ const App = () => {
       <CssBaseline />
       <Container>
         {/* ------ tabs ------ */}
-        <Tabs value={setTab} onChange={handleChange} aria-label="tabs">
+        <Tabs
+          value={tab}
+          onChange={handleChange}
+          aria-label="tabs"
+          sx={{ mb: 2 }}
+        >
           {tabs.map((label, index) => (
-            <Tab key={index} label={label} value={index} />
+            <Tab
+              key={index}
+              label={label}
+              value={index}
+              sx={{ textTransform: "none" }}
+            />
           ))}
         </Tabs>
 
