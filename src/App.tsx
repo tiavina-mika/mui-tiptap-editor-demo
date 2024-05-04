@@ -86,12 +86,7 @@ const App = () => {
 
         {/* ------ tabs panel ------ */}
         {/* Simple input */}
-        {tab === 0 && (
-          <TextEditor
-            placeholder="Type something here..."
-            toolbar={["bold", "italic", "underline"]}
-          />
-        )}
+        {tab === 0 && <TextEditor placeholder="Type something here..." />}
 
         {/* Select toolbar */}
         {tab === 1 && (
