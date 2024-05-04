@@ -112,13 +112,16 @@ const App = () => {
             tabClassName="my-tab"
             labelClassName="my-label"
             inputClassName="my-input"
+            toolbarClassName="my-toolbar"
           />
         )}
 
-        {/* With React Hook Form */}
+        {/* Mentions */}
         {tab === 5 && (
           <TextEditor label="Content" mentions={mentions} user={currentUser} />
         )}
+
+        {/* With React Hook Form */}
         {tab === 6 && <WithHookForm />}
       </Container>
     </ThemeProvider>
