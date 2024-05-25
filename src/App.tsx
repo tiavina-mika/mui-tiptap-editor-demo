@@ -11,14 +11,14 @@ import { TextEditor, TextEditorReadOnly } from "mui-tiptap-editor";
 import WithHookForm from "./WithHookForm";
 
 const tabs = [
-  "Simple input",
-  "Select toolbar",
+  "Simple",
+  "Toolbar",
   "Read only",
-  "Custom global styles",
-  "Each element styles",
+  "Global styles",
+  "Element styles",
   "Mentions",
-  'Async initial value',
-  "With React Hook Form"
+  "Async value",
+  "React Hook Form"
 ];
 
 const mentions = [
@@ -57,9 +57,10 @@ const currentUser = mentions[0];
  * @param time
  * @returns
  */
-const delay = (time: number) => new Promise((resolve) => {
-  setTimeout(resolve, time);
-});
+const delay = (time: number) =>
+  new Promise((resolve) => {
+    setTimeout(resolve, time);
+  });
 
 const theme = createTheme({
   palette: {
@@ -70,16 +71,16 @@ const theme = createTheme({
 const App = () => {
   const [tab, setTab] = useState<number>(0);
 
-  const [asyncDefaultValue, setAsyncDefaultValue] = useState<string>('');
+  const [asyncDefaultValue, setAsyncDefaultValue] = useState<string>("");
 
   // load async default value
   useEffect(() => {
     const fetchData = async () => {
       await delay(1000);
-      setAsyncDefaultValue('<p>Initial value from API for example</p>');
-    }
+      setAsyncDefaultValue("<p>Initial value from API for example</p>");
+    };
     fetchData();
-  }, [])
+  }, []);
 
   const handleChange = (_: SyntheticEvent, newValue: number) => {
     setTab(newValue);
@@ -101,7 +102,7 @@ const App = () => {
               key={index}
               label={label}
               value={index}
-              sx={{ textTransform: "none" }}
+              sx={{ textTransform: "none", px: 0 }}
             />
           ))}
         </Tabs>
