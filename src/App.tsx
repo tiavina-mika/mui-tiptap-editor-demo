@@ -6,7 +6,7 @@ import {
   ThemeProvider,
   createTheme
 } from "@mui/material";
-import { SyntheticEvent, useState } from "react";
+import { SyntheticEvent, useState, useEffect } from "react";
 import { TextEditor, TextEditorReadOnly } from "mui-tiptap-editor";
 import WithHookForm from "./WithHookForm";
 
@@ -17,6 +17,7 @@ const tabs = [
   "Custom global styles",
   "Each element styles",
   "Mentions",
+  'Async initial value',
   "With React Hook Form"
 ];
 
@@ -50,6 +51,16 @@ const mentions = [
 
 const currentUser = mentions[0];
 
+/**
+ * mock long promise
+ * mainly for data from API for example
+ * @param time
+ * @returns
+ */
+const delay = (time: number) => new Promise((resolve) => {
+  setTimeout(resolve, time);
+});
+
 const theme = createTheme({
   palette: {
     mode: "light"
@@ -58,6 +69,17 @@ const theme = createTheme({
 
 const App = () => {
   const [tab, setTab] = useState<number>(0);
+
+  const [asyncDefaultValue, setAsyncDefaultValue] = useState<string>('');
+
+  // load async default value
+  useEffect(() => {
+    const fetchData = async () => {
+      await delay(1000);
+      setAsyncDefaultValue('<p>Initial value from API for example</p>');
+    }
+    fetchData();
+  }, [])
 
   const handleChange = (_: SyntheticEvent, newValue: number) => {
     setTab(newValue);
@@ -120,9 +142,10 @@ const App = () => {
         {tab === 5 && (
           <TextEditor label="Content" mentions={mentions} user={currentUser} />
         )}
-
+        {/* With default async value */}
+        {tab === 6 && <TextEditor value={asyncDefaultValue} />}
         {/* With React Hook Form */}
-        {tab === 6 && <WithHookForm />}
+        {tab === 7 && <WithHookForm />}
       </Container>
     </ThemeProvider>
   );
