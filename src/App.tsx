@@ -6,7 +6,7 @@ import {
   ThemeProvider,
   createTheme
 } from "@mui/material";
-import { SyntheticEvent, useState, useEffect } from "react";
+import React, { SyntheticEvent, useState, useEffect } from "react";
 import { TextEditor, TextEditorReadOnly } from "mui-tiptap-editor";
 import WithHookForm from "./WithHookForm";
 

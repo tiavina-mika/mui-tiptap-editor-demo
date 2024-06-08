@@ -9,7 +9,7 @@ import {
 import z from "zod";
 import { TextEditor, TextEditorReadOnly } from "mui-tiptap-editor";
 import { Button, Stack, Typography } from "@mui/material";
-import { useState } from "react";
+import React, { useState } from "react";
 
 const schema = z.object({
   content: z.string()
