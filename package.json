@@ -13,7 +13,7 @@
     "typescript": "latest",
     "zod": "3.22.4"
   },
-    "license": "MIT",
+  "license": "MIT",
   "description": "https://github.com/mui/material-ui/blob/v5.14.2/docs/data/material/components/box/BoxSx.tsx",
   "devDependencies": {
     "react-scripts": "latest"
@@ -25,7 +25,6 @@
     "test": "react-scripts test --env=jsdom",
     "eject": "react-scripts eject"
   },
-  "name": "tyt2sj",
   "version": "0.0.0",
     "browserslist": {
     "production": [
