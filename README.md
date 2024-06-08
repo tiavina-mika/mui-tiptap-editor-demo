@@ -6,4 +6,5 @@ A repo to see and test each `mui-tiptap-editor` features
 <br />
 [npm](https://www.npmjs.com/package/mui-tiptap-editor)
 <br />
-test
+[live demo](https://mui-tiptap-editor.netlify.app/)
+
