@@ -4,21 +4,24 @@ import {
   Tab,
   Tabs,
   ThemeProvider,
-  createTheme
+  createTheme,
 } from "@mui/material";
-import React, { SyntheticEvent, useState, useEffect } from "react";
+import { SyntheticEvent, useEffect, useState } from "react";
 import { TextEditor, TextEditorReadOnly } from "mui-tiptap-editor";
+import TiptapParser from "tiptap-parser";
 import WithHookForm from "./WithHookForm";
+import Footer from "./Footer";
 
 const tabs = [
   "Simple",
   "Toolbar",
   "Read only",
-  "Global styles",
-  "Element styles",
+  "Custom global styles",
+  "Each element styles",
   "Mentions",
-  "Async value",
-  "React Hook Form"
+  "Async initial value",
+  "React Hook Form",
+  "Read without editor",
 ];
 
 const mentions = [
@@ -46,10 +49,16 @@ const mentions = [
   { label: "John Cusack", value: "xxxx22" },
   { label: "Matthew Broderick", value: "xxxx23" },
   { label: "Justine Bateman", value: "xxxx24" },
-  { label: "Lisa Bonet", value: "xxxx25" }
+  { label: "Lisa Bonet", value: "xxxx25" },
 ];
 
 const currentUser = mentions[0];
+
+const theme = createTheme({
+  palette: {
+    mode: "light",
+  },
+});
 
 /**
  * mock long promise
@@ -61,16 +70,26 @@ const delay = (time: number) =>
   new Promise((resolve) => {
     setTimeout(resolve, time);
   });
+const htmlToParse = `
+<h1>Display the content without to install the editor</h1>
+<p>Use <a href="https://www.npmjs.com/package/tiptap-parser">tiptap-parse</a> for that</p>
+<pre>
+<code>
+  import TiptapParser from "tiptap-parser";
 
-const theme = createTheme({
-  palette: {
-    mode: "light"
+  const html = "Hello world";
+
+  function App() {
+    return (
+      &lt;TiptapParser content={html} /&gt;
+    );
   }
-});
+</code>
+</pre>
+`;
 
 const App = () => {
   const [tab, setTab] = useState<number>(0);
-
   const [asyncDefaultValue, setAsyncDefaultValue] = useState<string>("");
 
   // load async default value
@@ -89,8 +108,8 @@ const App = () => {
   return (
     <ThemeProvider theme={theme}>
       <CssBaseline />
-      <Container>
-        {/* ------ tabs ------ */}
+      {/* ---------------- tabs ---------------- */}
+      <Container maxWidth="xl" className="spaceBetween">
         <Tabs
           value={tab}
           onChange={handleChange}
@@ -98,16 +117,12 @@ const App = () => {
           sx={{ mb: 2 }}
         >
           {tabs.map((label, index) => (
-            <Tab
-              key={index}
-              label={label}
-              value={index}
-              sx={{ textTransform: "none", px: 0 }}
-            />
+            <Tab key={index} label={label} value={index} />
           ))}
         </Tabs>
-
-        {/* ------ tabs panel ------ */}
+      </Container>
+      {/* ------------- tabs panels ------------- */}
+      <Container sx={{ mt: 2, minHeight: "50vh" }}>
         {/* Simple input */}
         {tab === 0 && <TextEditor placeholder="Type something here..." />}
 
@@ -118,15 +133,12 @@ const App = () => {
             toolbar={["bold", "italic", "underline"]}
           />
         )}
-
         {/* Read only */}
         {tab === 2 && <TextEditorReadOnly value="<p>Hello word!</p>" />}
-
         {/* Custom global styles */}
         {tab === 3 && (
           <TextEditor value="<p>Hello word!</p>" rootClassName="root" />
         )}
-
         {/* Each element styles */}
         {tab === 4 && (
           <TextEditor
@@ -139,15 +151,25 @@ const App = () => {
           />
         )}
 
-        {/* Mentions */}
+        {/* mentions */}
         {tab === 5 && (
-          <TextEditor label="Content" mentions={mentions} user={currentUser} />
+          <TextEditor
+            label="Content"
+            mentions={mentions}
+            user={currentUser}
+            userPathname="/profile"
+          />
         )}
         {/* With default async value */}
         {tab === 6 && <TextEditor value={asyncDefaultValue} />}
+
         {/* With React Hook Form */}
         {tab === 7 && <WithHookForm />}
+
+        {/* Read without editor */}
+        {tab === 8 && <TiptapParser content={htmlToParse} />}
       </Container>
+      <Footer />
     </ThemeProvider>
   );
 };
