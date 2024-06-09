@@ -115,6 +115,8 @@ const App = () => {
           value={tab}
           onChange={handleChange}
           aria-label="tabs"
+          variant="scrollable"
+          scrollButtons="auto"
           sx={{ mb: 2 }}
         >
           {tabs.map((label, index) => (
