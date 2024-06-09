@@ -1,3 +1,4 @@
+import React from "react";
 import {
   Container,
   CssBaseline,
@@ -122,7 +123,7 @@ const App = () => {
         </Tabs>
       </Container>
       {/* ------------- tabs panels ------------- */}
-      <Container sx={{ mt: 2, minHeight: "50vh" }}>
+      <Container sx={{ mt: 2, minHeight: "60vh" }}>
         {/* Simple input */}
         {tab === 0 && <TextEditor placeholder="Type something here..." />}
 
