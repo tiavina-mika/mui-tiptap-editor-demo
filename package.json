@@ -6,11 +6,11 @@
     "@mui/material": "latest",
     "@types/react": "latest",
     "@types/react-dom": "latest",
-    "mui-tiptap-editor": "0.4.7",
+    "mui-tiptap-editor": "0.7.5",
     "react": "latest",
     "react-dom": "latest",
     "react-hook-form": "7.47.0",
-    "tiptap-parser": "^0.0.8",
+    "tiptap-parser": "latest",
     "typescript": "latest",
     "zod": "3.22.4"
   },
