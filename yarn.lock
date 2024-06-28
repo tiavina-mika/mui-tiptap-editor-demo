@@ -7277,10 +7277,10 @@ ms@2.1.3, ms@^2.1.1:
   resolved "https://registry.yarnpkg.com/ms/-/ms-2.1.3.tgz#574c8138ce1d2b5861f0b44579dbadd60c6615b2"
   integrity sha512-6FlzubTLZG3J2a/NVCAleEhjzq5oxgHyaCU9yYXvcLsvoVaHJq/s5xXI6/XXP6tz7R9xAOtHnSO/tXtF3WRTlA==
 
-mui-tiptap-editor@0.4.7:
-  version "0.4.7"
-  resolved "https://registry.yarnpkg.com/mui-tiptap-editor/-/mui-tiptap-editor-0.4.7.tgz#9719842457f682c95441c0f719a7c996a248a2f3"
-  integrity sha512-X5A8/bxwi5lqi6v0ZQ6hDpVYdl9WzGr2AaXOi2rRRrTQCUK+he1degW1aElk6pG5LdQwGb8tvypO+ILzsGv2NQ==
+mui-tiptap-editor@^0.8.0:
+  version "0.8.0"
+  resolved "https://registry.yarnpkg.com/mui-tiptap-editor/-/mui-tiptap-editor-0.8.0.tgz#d13a8d711fc4d3de55f361a459ec2519640bba0e"
+  integrity sha512-ojl3u7QlDRYFq7gHwpgY01u4UUDnJyQh/EtD2XJhc91I+Mm+/J+aqsWWBs3kT8ZIa0Hu13J6oT5VEBqvoYTVZA==
   dependencies:
     "@emotion/css" "^11.11.2"
     "@tiptap/extension-bubble-menu" "^2.4.0"
@@ -9819,10 +9819,10 @@ tippy.js@^6.3.7:
   dependencies:
     "@popperjs/core" "^2.9.0"
 
-tiptap-parser@^0.0.8:
-  version "0.0.8"
-  resolved "https://registry.yarnpkg.com/tiptap-parser/-/tiptap-parser-0.0.8.tgz#46e4c4eacb4c001d5e918a8ba48957fbc288e4d4"
-  integrity sha512-sYDCNVlSdLyi53HG0Q9V4X15BRrfxiTKFPZjrURozXyGqMdo0dPaHnKNsGX7aUKA2cbodw4wL4CV/hgGfJPnNA==
+tiptap-parser@latest:
+  version "0.1.2"
+  resolved "https://registry.yarnpkg.com/tiptap-parser/-/tiptap-parser-0.1.2.tgz#73f46d5d72e44276808e2cc7e677d788293c250b"
+  integrity sha512-bUwrsa9i9hXxYW9fQeP9uoI8ugvrOt2dNi4l8HWnMzcbPh+8zd390DhZCwzgPKcJD+aM52crc2d15LHAkRn85Q==
   dependencies:
     hast-util-to-html "^9.0.1"
     html-react-parser "^5.1.10"
