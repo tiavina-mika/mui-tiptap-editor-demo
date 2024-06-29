@@ -6,7 +6,7 @@
     "@mui/material": "^5.15.21",
     "@types/react": "latest",
     "@types/react-dom": "latest",
-    "mui-tiptap-editor": "^0.9.4",
+    "mui-tiptap-editor": "^0.9.6",
     "react": "latest",
     "react-dom": "latest",
     "react-hook-form": "7.47.0",
