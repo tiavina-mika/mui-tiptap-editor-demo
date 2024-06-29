@@ -209,7 +209,7 @@ const App = () => {
           {/* --------------------------------------- */}
           <Container sx={{ mt: 1 }}>
             {/* mode switch */}
-            <Box sx={{ mt: 3 }}>
+            <Box sx={{ mb: 3 }}>
               <FormControlLabel
                 control={
                   <Switch checked={mode === defaultMode} onChange={handleChangeMode} />
@@ -253,7 +253,7 @@ const App = () => {
             {tab === 5 && (
               <TextEditor
                 label="Content"
-                labels={customLabels}
+                // labels={customLabels}
               />
             )}
 
