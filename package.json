@@ -3,15 +3,15 @@
     "@emotion/react": "latest",
     "@emotion/styled": "latest",
     "@hookform/resolvers": "3.3.2",
-    "@mui/material": "latest",
+    "@mui/material": "^5.15.21",
     "@types/react": "latest",
     "@types/react-dom": "latest",
-    "mui-tiptap-editor": "^0.8.0",
+    "mui-tiptap-editor": "^0.9.4",
     "react": "latest",
     "react-dom": "latest",
     "react-hook-form": "7.47.0",
     "tiptap-parser": "latest",
-    "typescript": "latest",
+    "typescript": "^5.5.2",
     "zod": "3.22.4"
   },
   "license": "MIT",
@@ -24,7 +24,8 @@
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test --env=jsdom",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "upgrade": "yarn add mui-tiptap-editor@latest"
   },
   "version": "0.0.0",
   "browserslist": {
