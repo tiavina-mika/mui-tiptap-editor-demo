@@ -93,7 +93,8 @@ const tabs = [
   'Mentions',
   'Async initial value',
   'React Hook Form',
-  'Read without editor'
+  'Read without editor',
+  'Upload image'
 ];
 
 const mentions = [
@@ -191,6 +192,19 @@ const App = () => {
     setTab(newValue);
   };
 
+  // API call to upload file
+  const uploadFile = async (file: File) => {
+    const formData = new FormData();
+    formData.append("file", file);
+    const response = await fetch("https://api.escuelajs.co/api/v1/files/upload", {
+      method: "POST",
+      body: formData,
+    });
+
+    const data = await response.json();
+    return { id: data.filename, src: data.location };
+  };
+
   return (
     <ThemeProvider theme={getTheme(mode)}>
       <CssBaseline />
@@ -253,7 +267,7 @@ const App = () => {
             {tab === 5 && (
               <TextEditor
                 label="Content"
-                // labels={customLabels}
+                labels={customLabels}
               />
             )}
 
@@ -275,6 +289,21 @@ const App = () => {
             {/* Read without editor */}
             {tab === 9 && (
               <TiptapParser content={htmlToParse} />
+            )}
+
+            {/* Upload image */}
+            {tab === 10 && (
+              <TextEditor
+                content="<img alt='Cute cat' src='https://png.pngtree.com/png-clipart/20230511/ourmid/pngtree-isolated-cat-on-white-background-png-image_7094927.png' />"
+                uploadFileOptions={{
+                  uploadFile,
+                  maxSize: 5,
+                  maxFilesNumber: 2,
+                  allowedMimeTypes: ['image/jpeg', 'image/png', 'image/jpg'],
+                  imageMaxWidth: 900,
+                  imageMaxHeight: 500,
+                }}
+              />
             )}
           </Container>
       </Box>
