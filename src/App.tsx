@@ -239,6 +239,7 @@ const App = () => {
                 placeholder='Type something here...'
                 toolbarPosition="bottom"
                 disableTabs={false}
+                id="simple"
               />
             )}
 
@@ -247,6 +248,7 @@ const App = () => {
               <TextEditor
                 placeholder='Type something here...'
                 toolbar={['bold', 'italic', 'underline']}
+                id="selected-toolbar"
               />
             )}
             {/* Read only */}
@@ -256,6 +258,7 @@ const App = () => {
               <TextEditor
                 value="<p>Hello word!</p>"
                 rootClassName="root"
+                id="custom-global-styles"
               />
             )}
             {/* Each element styles */}
@@ -267,6 +270,7 @@ const App = () => {
                 labelClassName="my-label"
                 inputClassName="my-input"
                 toolbarClassName="my-toolbar"
+                id="each-element-styles"
               />
             )}
 
@@ -275,6 +279,7 @@ const App = () => {
               <TextEditor
                 label="Content"
                 labels={customLabels}
+                id="override-labels"
               />
             )}
 
@@ -284,11 +289,12 @@ const App = () => {
                 label="Content"
                 mentions={mentions}
                 user={currentUser}
+                id="mentions"
                 userPathname="/profile"
               />
             )}
             {/* With default async value */}
-            {tab === 7 && <TextEditor value={asyncDefaultValue} />}
+            {tab === 7 && <TextEditor value={asyncDefaultValue} id="async-value" />}
 
             {/* With React Hook Form */}
             {tab === 8 && <WithHookForm />}
@@ -302,6 +308,7 @@ const App = () => {
             {tab === 10 && (
               <TextEditor
                 content="<img alt='Cute cat' src='https://png.pngtree.com/png-clipart/20230511/ourmid/pngtree-isolated-cat-on-white-background-png-image_7094927.png' />"
+                id="upload-image"
                 uploadFileOptions={{
                   uploadFile,
                   maxSize: 5,
