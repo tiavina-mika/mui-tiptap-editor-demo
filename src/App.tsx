@@ -39,7 +39,8 @@ const customLabels = {
     youtube: "Youtube",
     undo: "Annuler",
     redo: "Refaire",
-    mention: "Mention"
+    mention: "Mention",
+    inlineCode: "Code"
   },
   headings: {
     normalText: "Text normal",
@@ -233,7 +234,13 @@ const App = () => {
               />
             </Box>
             {/* Simple input */}
-            {tab === 0 && <TextEditor placeholder='Type something here...' />}
+            {tab === 0 && (
+              <TextEditor
+                placeholder='Type something here...'
+                toolbarPosition="bottom"
+                disableTabs={false}
+              />
+            )}
 
             {/* Select toolbar */}
             {tab === 1 && (
