@@ -7,8 +7,8 @@
     "@types/react": "latest",
     "@types/react-dom": "latest",
     "mui-tiptap-editor": "^0.9.18",
-    "react": "latest",
-    "react-dom": "latest",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
     "react-hook-form": "7.47.0",
     "tiptap-parser": "latest",
     "typescript": "^5.5.2",
@@ -25,7 +25,7 @@
     "build": "react-scripts build",
     "test": "react-scripts test --env=jsdom",
     "eject": "react-scripts eject",
-    "upgrade": "yarn add mui-tiptap-editor@latest"
+    "upgrade-lib": "yarn add mui-tiptap-editor@latest"
   },
   "version": "0.0.0",
   "browserslist": {
