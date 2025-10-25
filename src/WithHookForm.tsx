@@ -41,7 +41,9 @@ const WithHookForm = () => {
               name="content"
               control={control}
               defaultValue=""
-              render={({ field }) => <TextEditor {...field} label="Content" id="content" />}
+              render={({ field }: { field: import("react-hook-form").ControllerRenderProps<Input, "content"> }) => (
+                <TextEditor {...field} label="Content" id="content" />
+              )}
             />
             {/* buttons */}
             <Stack direction="row" spacing={3}>
