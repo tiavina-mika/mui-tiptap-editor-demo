@@ -1,6 +1,6 @@
 import { zodResolver } from "@hookform/resolvers/zod";
 import {
-  SubmitHandler,
+  type SubmitHandler,
   useForm,
   FormProvider,
   Controller
