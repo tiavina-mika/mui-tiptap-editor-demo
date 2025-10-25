@@ -1,44 +1,32 @@
 {
   "dependencies": {
-    "@emotion/react": "latest",
-    "@emotion/styled": "latest",
-    "@hookform/resolvers": "3.3.2",
-    "@mui/material": "^5.15.21",
-    "@types/react": "latest",
-    "@types/react-dom": "latest",
-    "mui-tiptap-editor": "^0.11.5",
-    "react": "^18.2.0",
-    "react-dom": "^18.2.0",
-    "react-hook-form": "7.47.0",
+    "@emotion/react": "11.14.0",
+    "@emotion/styled": "11.14.1",
+    "@hookform/resolvers": "5.2.2",
+    "@mui/material": "^7.3.4",
+    "@types/react-dom": "19.2.2",
+    "mui-tiptap-editor": "^1.1.6",
+    "react": "^19.2.0",
+    "react-dom": "^19.2.0",
+    "react-hook-form": "7.65.0",
     "tiptap-parser": "latest",
-    "typescript": "^5.5.2",
-    "zod": "3.22.4"
+    "zod": "4.1.12"
   },
   "license": "MIT",
   "description": "https://github.com/mui/material-ui/blob/v5.14.2/docs/data/material/components/box/BoxSx.tsx",
   "devDependencies": {
-    "react-scripts": "latest"
+    "@types/react": "19.2.2",
+    "@vitejs/plugin-react": "^5.1.0",
+    "typescript": "^5.9.3",
+    "vite": "^7.1.12",
+    "vite-tsconfig-paths": "^5.1.4"
   },
-  "main": "index.tsx",
   "scripts": {
-    "start": "react-scripts start",
-    "build": "react-scripts build",
-    "test": "react-scripts test --env=jsdom",
-    "eject": "react-scripts eject",
-    "upgrade-lib": "yarn add mui-tiptap-editor@latest"
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview",
+    "upgrade:lib": "yarn add mui-tiptap-editor@latest"
   },
   "version": "0.0.0",
-  "browserslist": {
-    "production": [
-      ">0.2%",
-      "not dead",
-      "not op_mini all"
-    ],
-    "development": [
-      "last 1 chrome version",
-      "last 1 firefox version",
-      "last 1 safari version"
-    ]
-  },
   "packageManager": "yarn@1.22.22+sha512.a6b2f7906b721bba3d67d4aff083df04dad64c399707841b7acf00f6b133b7ac24255f2652fa22ae3534329dc6180534e98d17432037ff6fd140556e2bb3137e"
 }
