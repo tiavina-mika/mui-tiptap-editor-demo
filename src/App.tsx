@@ -3,7 +3,7 @@ import {
   Box, Container, CssBaseline, FormControlLabel, Switch, Tab, Tabs, ThemeProvider, createTheme,
 } from '@mui/material';
 import { type SyntheticEvent, useEffect, useState } from 'react';
-import { TextEditor, TextEditorReadOnly } from 'mui-tiptap-editor';
+import { TextEditor, TextEditorReadOnly, type ILabels, type ToolbarIcons } from 'mui-tiptap-editor';
 import TiptapParser from 'tiptap-parser';
 import WithHookForm from './WithHookForm';
 
